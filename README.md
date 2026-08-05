@@ -42,5 +42,19 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-SOURCE is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
+SOURCE Global, PBC (founded as Zero Mass Water) is a Scottsdale, Arizona public benefit
+corporation that built the SOURCE Hydropanel — an off-grid solar-thermal device that
+extracts water vapor from the air and mineralizes it into drinking water — deployed in
+more than 50 countries, and later moved into bottled water. It raised roughly USD 270
+million, including a USD 130 million Series D in 2022.
+
+SOURCE Global was a hardware and consumer-products company, not a software vendor, and
+published no developer portal, API documentation, SDK or machine-readable API contract.
+As of 2026-08-05 the company appears defunct: every path on `source.co` returns HTTP 402
+with Shopify's "Store unavailable" page, and the legacy `zeromasswater.com` domain is a
+parked page. See the `x-coverage` block in `apis.yml`.
+
+- https://source.co/
+- https://www.linkedin.com/company/sourceglobal
 - https://forgeglobal.com/source_stock/
+- https://www.hiive.com/securities/source-stock

@@ -1,0 +1,69 @@
+# SOURCE Global
+
+> SOURCE Global, PBC (founded as Zero Mass Water) is a Scottsdale, Arizona public
+> benefit corporation started in 2014 by Cody Friesen. It built the SOURCE Hydropanel,
+> an off-grid solar-thermal device that extracts water vapor from the air and
+> mineralizes it into drinking water, deployed in more than 50 countries, and later
+> moved into bottled water by acquiring Proud Source Water in 2023. It raised roughly
+> USD 270 million, including a USD 130 million Series D in 2022. This file is generated
+> by API Evangelist from public sources; it is NOT published by SOURCE Global.
+
+## Status as of 2026-08-05
+
+SOURCE Global appears to be defunct. Every path on `https://source.co/` — including the
+homepage, `/.well-known/*`, `/openapi.json` and `/sitemap.xml` — returns **HTTP 402
+Payment Required** with the Shopify "Store unavailable" page. The legacy
+`zeromasswater.com` domain resolves to a parked GoDaddy website-builder page. The
+company's last public activity was in early 2025; an April 2025 SEC filing showed a
+USD 75 million raise that closed at USD 19.3 million, and founder Cody Friesen
+announced his departure in June 2025.
+
+The one document the origin still serves is `https://source.co/llms.txt` (HTTP 200,
+`text/markdown`), and it reads in full:
+
+```
+# Store Unavailable
+
+This store is currently unavailable. Agent interaction is not possible at this time.
+```
+
+That verbatim response is saved in this repo at `llms/source-llms-fetched.txt`.
+
+## API surface
+
+**None.** SOURCE Global was a hardware and consumer-products company, not a software
+vendor. It published no developer portal, no API reference, no SDK, no CLI, no webhook
+catalog and no machine-readable contract of any kind (no OpenAPI, AsyncAPI, GraphQL SDL,
+JSON Schema, Postman collection, MCP server or A2A agent card).
+
+Do not assume or invent `api.source.co`, `docs.source.co` or `developer.source.co` —
+none of those hostnames resolve. The only `api`-shaped paths that ever appear in the
+web archive for this domain (`/api/2024-01/graphql.json`, `/cdn/shopifycloud/...`) are
+**Shopify platform endpoints**, not a SOURCE Global API. `portal.source.co` resolves
+but does not complete a TLS connection.
+
+`https://source.co/robots.txt` (HTTP 200) is `User-agent: * / Disallow: /` — the entire
+site is disallowed to crawlers.
+
+## Company
+
+- [SOURCE Global](https://source.co/): company website (currently HTTP 402, store unavailable)
+- [LinkedIn: SOURCE Global](https://www.linkedin.com/company/sourceglobal): company page
+- [Crunchbase: Source](https://www.crunchbase.com/organization/source-3902): funding profile
+- [Forge Global: SOURCE](https://forgeglobal.com/source_stock/): secondary-market listing
+- [Hiive: SOURCE](https://www.hiive.com/securities/source-stock): secondary-market listing
+
+## Product and technology
+
+SOURCE Hydropanel — a self-contained solar-thermal panel that draws water vapor from
+ambient air, condenses it, mineralizes it with calcium and magnesium, and stores it in
+an onboard reservoir. Rated at roughly five liters (1.3 gallons) of drinking water per
+day per panel, operating fully off-grid with sunlight and air as the only inputs.
+Product lines spanned residential (Hydropanel R3), commercial and community-scale
+arrays, plus SOURCE-branded bottled water and the acquired Proud Source Water brand.
+
+## Artifacts in this repository
+
+- `security/source-domain-security.yml`: probed TLS/DNS posture for `source.co` (type `DomainSecurity`)
+- `llms/source-llms-fetched.txt`: the verbatim `https://source.co/llms.txt` response
+- `apis.yml`: company profile, identity links, and the `x-coverage` record explaining why this profile is thin

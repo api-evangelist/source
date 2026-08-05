@@ -1,17 +1,44 @@
 aid: source
-name: SOURCE
-description: 'SOURCE is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+name: SOURCE Global
+description: 'SOURCE Global, PBC (founded as Zero Mass Water) is a Scottsdale, Arizona
+  public benefit corporation started in 2014 by Arizona State University materials
+  scientist Cody Friesen to make drinking water out of sunlight and air. Its SOURCE
+  Hydropanel is an off-grid solar-thermal device that pulls water vapor from the
+  atmosphere, condenses and mineralizes it, and delivers roughly five liters of
+  drinking water a day; the panels were deployed in residential, commercial, community
+  and humanitarian projects across more than 50 countries, and the company later moved
+  into bottled water, acquiring Proud Source Water in 2023. It raised approximately
+  USD 270 million in total, including a USD 50 million Series C led by BlackRock in
+  2020 and a USD 130 million Series D in 2022 co-led by Breakthrough Energy Ventures
+  and the Drawdown Fund with Microsoft Climate Innovation Fund and Fifth Wall
+  participating. SOURCE was a hardware and consumer-products business rather than a
+  software vendor: it never published a developer portal, API reference, SDK or any
+  machine-readable API contract, and the only machine-readable surface its site ever
+  exposed was the Shopify platform behind its direct-to-consumer storefront. The
+  company went quiet during 2025 — an April 2025 SEC filing showed a USD 75 million
+  raise that closed at USD 19.3 million, and founder Cody Friesen announced his
+  departure in June 2025 — and as of August 2026 source.co answers HTTP 402 "Store
+  unavailable" on every path while the legacy zeromasswater.com domain resolves to a
+  parked GoDaddy builder page.'
 url: https://raw.githubusercontent.com/api-evangelist/source/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment-pipeline
 specificationVersion: '0.20'
 created: '2026-08-05'
 modified: '2026-08-05'
 tags:
 - Company
+- Water
+- Drinking Water
+- Cleantech
+- Climate Tech
+- Atmospheric Water Generation
+- Hardware
+- Consumer Products
+- Renewable Energy
+- Public Benefit Corporation
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +46,46 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/source-domain-security.yml
+- type: LLMsTxt
+  url: llms/source-llms.txt
 - type: Website
+  url: https://source.co/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/sourceglobal
+- type: Crunchbase
+  url: https://www.crunchbase.com/organization/source-3902
+- type: SecondaryMarket
   url: https://forgeglobal.com/source_stock/
+- type: SecondaryMarket
+  url: https://www.hiive.com/securities/source-stock
+x-enrichment:
+  date: '2026-08-05'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: defunct
+  detail: SOURCE Global appears to have wound down — every path on source.co, including
+    the homepage and all /.well-known/* probes, returns HTTP 402 with Shopify's "Store
+    unavailable" page, source.co/llms.txt answers 200 with only "This store is currently
+    unavailable. Agent interaction is not possible at this time.", and the legacy
+    zeromasswater.com domain is now a parked GoDaddy builder page.
+  evidence:
+  - url: https://source.co/
+    status: 402
+  - url: https://source.co/llms.txt
+    status: 200
+  - url: https://source.co/.well-known/agent-card.json
+    status: 402
+  - url: https://source.co/openapi.json
+    status: 402
+  - url: https://source.co/robots.txt
+    status: 200
+  - url: https://zeromasswater.com/
+    status: 200
+  - url: https://api.github.com/orgs/sourceglobal
+    status: 404
+  checked: '2026-08-05'
