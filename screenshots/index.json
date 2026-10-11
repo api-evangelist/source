@@ -1,0 +1,11 @@
+[
+  {
+    "repo": "source",
+    "captured_at": "2026-10-11T194019",
+    "source_url": "https://source.co/",
+    "source_type": "Website",
+    "file": "source-2026-10-11T194019.png",
+    "bytes": 51218,
+    "capture": "playwright-local"
+  }
+]
